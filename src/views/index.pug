@@ -1,0 +1,45 @@
+html
+	head
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+		link(rel="stylesheet" href="stylesheets/master.css")
+		title Lissajous Curve
+
+	body
+		.center
+			main
+				.container
+					.row
+						.col-lg-8.wrapper_canvas
+							canvas#canvas
+
+						.col-lg-4.wrapper_controls
+							h2 Circle Count
+							form#count
+							h2 Base Speed
+							form#speed
+							h2 Save image
+							form#save
+							h2 Plot again
+							form#clear
+					
+					footer
+						details
+							summary Learn more?
+							p
+								| This program plots the 
+								a(href="https://en.wikipedia.org/wiki/Lissajous_curve" target="_block") Lissajous curve
+								| .
+								br
+								| The first circle spins at the base speed (in rad/s), the second at twice that speed, the nth circle at n times the speed. 
+								br
+								| Each plot is obtained by combining the sin and cos values from the circles representing the rows and colums respectively.
+							p
+								| Inspired by  
+								a(href="https://www.youtube.com/watch?v=4CbPksEl51Q&t=110s" target="_blank") Matt Parker from standupmaths
+								| .
+							p Made with ❤️ by Niels Vadot
+
+		script(src="scripts/draw.js")
+		script(src="scripts/index.js")
+		script(src="scripts/controls.js")

@@ -1,0 +1,76 @@
+$black: #000
+$grey: #aaa
+$white: #eee
+$big: 3rem
+$smol: 1rem
+
+body
+	background: $black
+
+	height: 100%
+
+	.center
+		height: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		> *
+			margin: auto
+
+	main
+		max-width: 100%
+		
+		.wrapper_controls
+			h2
+				font-size: $smol
+				text-transform: uppercase
+				letter-spacing: 2px
+				color: $grey
+
+			label
+				display: block
+				font-weight: lighter
+				font-size: $big
+				text-align: center
+				letter-spacing: 2px
+				color: $white
+
+			input
+				display: block
+				margin: 0 auto
+				padding: 0
+				width: 100%
+				max-width: 300px
+
+			input[type="button"]
+				background: transparent
+				border: none
+				font-weight: lighter
+				font-size: $big
+				color: $white
+				cursor: pointer
+
+		.wrapper_canvas
+			padding-bottom: 1rem
+			width: 800px
+			max-width: auto
+			canvas
+				width: 100%
+				height: 100%
+				max-width: 100%
+				object-fit: contain
+
+		footer
+			padding-bottom: 1rem
+			color: $white
+
+			summary
+				font-size: 1rem
+				text-transform: uppercase
+				letter-spacing: 2px
+				color: $grey
+
+
+@media only screen and (max-width: 900px)
+	body .flex
+		flex-wrap: wrap
