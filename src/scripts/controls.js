@@ -150,11 +150,22 @@ CONTROLS.callback.clear = function() {
 }
 
 CONTROLS.callback.save = function() {  
+	// Create a canvas with black background
+	// and draw plot on it
+	let c = document.createElement('canvas')
+	let ctx = c.getContext('2d')
+	c.width = WIDTH
+	c.height = HEIGHT
+	ctx.fillStyle = '#000'
+	ctx.fillRect(0, 0, WIDTH, HEIGHT)
+	ctx.drawImage(canvas, 0, 0)
+
+	// Generate image and download
 	let link = document.createElement('a')
 	link.download = `lissajous.jpg`
-	link.href = canvas.toDataURL('image/png')
+	link.href = c.toDataURL('image/png')
 	document.body.appendChild(link)
-	link.setAttribute("type", "hidden")
+	link.setAttribute('type', 'hidden')
 	link.click()
 	document.body.removeChild(link)
 }
